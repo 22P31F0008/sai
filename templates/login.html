@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <style>
+        body {
+            background-image: url(" https://wallpaperset.com/w/full/d/7/9/359189.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed; 
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #564c31;
+            padding: 20px;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(246, 243, 243, 0.1);
+            width: 350px;
+        }
+
+        label,
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: calc(100% - 30px);
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #4583e0;
+        }
+
+        input[type="submit"] {
+            background-color: #3257df;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #c06ab6;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <input type="submit" value="Login">
+    </form>
+    <br>
+   {% for message in messages %}
+   <div class="alert alert-danger" role="alert">
+       {{message}}
+   </div>
+   {% endfor %}
+</body>
+</html>

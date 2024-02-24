@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<form id="registrationForm" method="POST" action="">
+    {% csrf_token %}
+    <label for="fullName">fullName:</label>
+    <input type="text" id="fullName" name="fullname" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="duration">duration:</label>
+    <input type="duration" id="duration" name="duration" required>
+ 
+    <label for="subject">subject:</label>
+    <input type="subject" id="subject" name="subject" required>
+
+    <label for="mobile_no">mobile_no:</label>
+    <input type="mobile_no" id="subject" name="mobile_no" required>
+
+    <label for="slot">slot:</label>
+    <input type="text" id="slot" name="slot" required>
+
+    <label for="seats available">seats available:</label>
+    <input type="seats available" id="seats available" name="seats available" required>
+
+    <label for="course">Select Course:</label>
+    <select id="course" name="course" required>
+        <option value="webdev">java</option>
+        <option value="dataSci">python</option>
+        <option value="design">c++</option>
+        <option value="design">web dev</option>
+        <option value="design">iot</option>
+        <option value="design">machine learning</option>
+        <!-- Add more options as needed -->
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    function submitForm() {
+        // You can add JavaScript validation here before submitting the form
+        alert("Form submitted successfully!"); // Replace this with actual form submission code
+    }
+</script>
+
+</body>
+</html>
